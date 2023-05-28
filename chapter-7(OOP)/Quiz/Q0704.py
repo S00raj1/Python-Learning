@@ -13,29 +13,27 @@ class Length:
 
     @staticmethod
     def cm_to_inches(value:float):
-        print(value*0.393701)
+        print('the value of cm to inches is', value*0.393701)
     @staticmethod
     def km_to_miles(value:float):
-        print( value*0.621371)
+        print('the value of km to miles is', value*0.621371)
 class Weight:
     @staticmethod
     def kg_to_pounds(value:float):
-        print( value*2.20462)
+        print('the value of Kg to pounds is', value*2.20462)
     @staticmethod
     def gm_to_ounces(value:float):
-        print(value*0.035274)
+        print('the value of gm to ounces is',value*0.035274)
 class Time:
     @staticmethod
     def sec_to_hours(value):
-        print(value*0.000277778)
+        print('the value of sec to hours is',value*0.000277778)
     @staticmethod
     def mil_to_sec(value):
-        print(value*0.001)
-
-# l = Length()
-# (l.cm_to_inches(Length.length),l.km_to_miles(Length.length))
-length = int(input("enter a length"))
+        print('the value of miliseconds to seconds is',value*0.001)
+length = float(input("enter a length"))
+l = Length()
+(l.cm_to_inches(length),l.km_to_miles(length))
+Weight.kg_to_pounds(length)
 Weight.gm_to_ounces(length)
-#
-# w = Weight()
-# (w.gm_to_ounces(Length.length))
+(Time.sec_to_hours(length),Time.mil_to_sec(length))
