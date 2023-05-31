@@ -1,11 +1,11 @@
 import itertools
-# animals = ['Bear','Cat','Lion','Tiger','Dog','Donkey','Carrot','Dada','Bill']
-# animals = sorted(animals)
-# print(animals)
-# values = itertools.groupby(animals,lambda x:x[1])
-# grouped = {k:list(v) for k,v in values}
-# print(grouped)
-#
+animals = ['Bill','Bear','Cat','Lion','Tiger','Dog','Donkey','Carrot','Dada','Bird']
+animals = sorted(animals)
+print(animals)
+values = itertools.groupby(animals,lambda x:x[1])
+grouped = {k:list(v) for k,v in values}
+print(grouped)
+
 #
 #
 # books = ['Science','Social','Math','English','Nepali','Computer','Health','Optional Math','Account']
@@ -19,10 +19,10 @@ import itertools
 # print(display)
 
 
-
-location = ('Biratnagar','Sitagunj','Sunsari','Morang','Amardaha','Kathmandu','Kalopul','Thapagaun')
-location = sorted(location)
-geo = itertools.groupby(location,lambda a:a[0])
-cag = {a:list(v) for a,v in geo}
-print(cag)
-
+#
+# location = ('Biratnagar','Sitagunj','Sunsari','Morang','Amardaha','Kathmandu','Kalopul','Thapagaun')
+# location = sorted(location)
+# geo = itertools.groupby(location,lambda a:a[0])
+# cag = {a:list(v) for a,v in geo}
+# print(cag)
+#
