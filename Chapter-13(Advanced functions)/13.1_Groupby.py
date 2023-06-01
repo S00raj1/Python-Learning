@@ -1,9 +1,14 @@
 import itertools
-animals = ['Bill','Bear','Cat','Lion','Tiger','Dog','Donkey','Carrot','Dada','Bird']
-animals = sorted(animals)
+
+#
+animals = ['Bill', 'Billard', 'Bear', 'Cat', 'Lion', 'Tiger', 'Dog', 'Donkey', 'Carrot', 'Dada', 'Bird']
+animals = sorted(animals, key=lambda x: x[1])
+
+# animals = ['Dada', 'Cat', 'Carrot', 'Bear', 'Bill', 'Billard', 'Lion', 'Tiger', 'Bird'    'Dog', 'Donkey', ]
+
 print(animals)
-values = itertools.groupby(animals,lambda x:x[1])
-grouped = {k:list(v) for k,v in values}
+values = itertools.groupby(animals, lambda x: x[1])
+grouped = {k: list(v) for k, v in values}
 print(grouped)
 
 #

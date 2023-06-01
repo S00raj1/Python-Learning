@@ -101,9 +101,8 @@ while hour < 12:
 
             if hour == 00:
                 if minute == 00:
-                    if seconds == 20:
-                        print('\r','alarm',end='')
-            seconds += 1
+                    if seconds == 00:
+                           seconds += 1
         minute += 1
     hour += 1
 
