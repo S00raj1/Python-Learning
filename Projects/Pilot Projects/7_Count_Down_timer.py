@@ -1,10 +1,13 @@
 import time
 hour = int(input("Enter hour"))
-while hour > 0:
-    minute =int(input("Enter minute"))
-    while minute > 0:
-        seconds = 60
-        while seconds > 0:
+while hour >= 0:
+    # minute =int(input("Enter minute"))
+    minute = 59
+
+    while minute >= 0:
+
+        seconds = 59
+        while seconds >= 0:
 
             time.sleep(1)
             current_time = f"Time Elapsed : {hour:0>2} : {minute:0>2} : {seconds:0>2}"
@@ -19,4 +22,5 @@ while hour > 0:
 
         minute -= 1
 
-        hour -= 1
+    hour -= 1
+    print("\n","Time off!!")
