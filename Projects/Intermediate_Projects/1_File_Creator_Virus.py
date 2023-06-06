@@ -3,9 +3,6 @@ class Parent:
         self.caste = caste
         # self.address = address
 
-    def __str__(self):
-        return self.caste
-
 class child(Parent):
     def __init__(self,caste):
         super().__init__(caste=caste)

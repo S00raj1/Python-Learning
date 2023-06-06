@@ -30,10 +30,23 @@ class Game:
         self.attempts = 0
         self.guess = 0
         self.lives = 5
+        self.crnt_word = ''
 
     def display_Greeeting(self):
         print(random.choice(greet))
         print("*" * 69)
+
+    def find_indices(self,word,value):
+        templist=[]
+        for count, w in enumerate(word):
+            if w == value:
+                templist.append(count)
+        # return [
+        #     index for index in enumerate(word)
+        #     if index == value
+        #
+        # ]
+        return templist
 
     def game(self):
         print("Lets start with the word:")
@@ -41,14 +54,17 @@ class Game:
         key = key.upper()
         self.current_word = list(key)
         rand = random.choice(self.current_word)
-        n_rand = random.choice(self.current_word)
-        n_indx = self.current_word.index(n_rand)
+        self.n_rand = random.choice(self.current_word)
+        self.n_indx = self.find_indices(self.current_word,self.n_rand)
+        # print(n_indx)
+        # n_indx = self.current_word.index(n_rand)
         indx = self.current_word.index(rand)
         self.disp = '_'*len(key)
         self.lis_disp = list(self.disp)
         self.lis_disp[indx] = rand
+        for R_value in self.n_indx:
+            self.lis_disp[R_value] = self.n_rand
 
-        self.lis_disp[n_indx] = n_rand
         self.disp = list_to_str(self.lis_disp)
         value = value.upper()
         print("Hint: ",value,'\n')
@@ -65,6 +81,9 @@ class Game:
             u_input = input("Enter a letter: ").upper()
             if u_input in self.current_word:
                 indexx = self.current_word.index(u_input)
+                self.n_indx = self.find_indices(self.current_word,u_input)
+                for R_value in  self.n_indx:
+                    self.lis_disp[R_value] = u_input
                 self.lis_disp[indexx] = u_input
                 self.disp = list_to_str(self.lis_disp)
                 self.attempts += 1
@@ -77,6 +96,9 @@ class Game:
                 print("|", f"{self.disp}".center(67), "|")
                 print("|", " ".center(67), "|")
                 print("+", "-" * 67, "+")
+                self.crnt_word = list_to_str(self.current_word)
+                if self.disp == self.crnt_word:
+                    break
             else:
                 self.attempts += 1
                 self.lives -= 1
@@ -89,7 +111,7 @@ class Game:
                 print("|", " ".center(67), "|")
                 print("+", "-" * 67, "+")
 
-        if self.disp == self.current_word:
+        if self.disp == self.crnt_word:
             print(WINNER)
         else:
             print(LOOSER)
